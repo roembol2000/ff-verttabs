@@ -20,6 +20,7 @@ Download the files from the [latest release](https://github.com/roembol2000/ff-v
 - If it doesn't already exist, create a "chrome" directory in the profile directory
 - Add the contents of the "chrome" directory in this repository to yours
 - Your directory structure should look something like the following:
+
 ```
 [profile dir]/
 ├─ extensions/
@@ -32,6 +33,7 @@ Download the files from the [latest release](https://github.com/roembol2000/ff-v
 ├─ addons.json
 ├─ ...
 ```
+
 - We need to tell Firefox to look for our custom CSS files. Go to `about:config`, search for 'userprof', and double click the toolkit.legacyUserProfileCustomizations.stylesheets preference to switch it to true.
 - Restart Firefox
 
@@ -42,7 +44,12 @@ Download the files from the [latest release](https://github.com/roembol2000/ff-v
 
 ## Updating
 
-- If an update broke the autohiding, I will try to fix the CSS. To update, simply replace the contents of the 'vertical-tabs.css' file with the new version in your userchrome directory (which can be found using the steps above).
+If an update broke the autohiding, I will try to fix the CSS. To update, simply replace the contents of the 'vertical-tabs.css' file with the new version in your userchrome directory (which can be found using the steps above).
+
+- 2023-11-27: Initial release
+- 2024-11-29: Fix compatibility with Firefox 133
+- 2025-06-27: Fix compatibility with Firefox 140
 
 ## Thank you for using!
+
 Please share :)
