@@ -1,3 +1,11 @@
+/**
+ * Firefox Autohide Vertical Tabs
+ * Roemer Peters 2025
+ * https://github.com/roembol2000/ff-verttabs
+ *
+ * v2.1.1
+ */
+
 :root {
   /*  Set to 'none' to hide tabbar. Set to 'block' to show tabbar  */
   --vt-hide-tabbar: none;
