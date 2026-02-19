@@ -35,11 +35,13 @@ Download the files from the [latest release](https://github.com/roembol2000/ff-v
 ```
 
 - We need to tell Firefox to look for our custom CSS files. Go to `about:config`, search for 'userprof', and double click the toolkit.legacyUserProfileCustomizations.stylesheets preference to switch it to true.
+- In the Firefox preferences, disable "Show sidebar" under Browser Layout.
 - Restart Firefox
 
 ### Configuration
 
 - By default, the original tab bar will be disabled. If you wish to keep the original tab bar around, you can enable it at the top of the vertical-tabs.css file.
+  - To get your window controls back, right click on some blank space on the top bar and go to "Customize Toolbar...". There, turn on "Title Bar" at the bottom.
 - You can also change the width and transition time / delay here.
 
 ## Updating
