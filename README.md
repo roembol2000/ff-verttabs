@@ -4,6 +4,12 @@ Vertical tab goodness
 
 ![Demo GIF](media/demo.gif)
 
+## Why? I thought Firefox already has this built-in
+
+While Firefox does have this feature built-in these days, it does not work very well when you have too many tabs open. The built-in tab list gets increasingly unresponsive the more tabs you have, and when you have a few hundred tabs open it just breaks down.
+
+This setup handles thousands of tabs fine, without breaking a sweat. As I do daily-drive this, it gets updated very quickly as new Firefox versions come out that change the behaviour of the sidebar.
+
 ## Setup
 
 Download the files from the [latest release](https://github.com/roembol2000/ff-verttabs/releases/latest) -> Source code (zip)
@@ -35,7 +41,8 @@ Download the files from the [latest release](https://github.com/roembol2000/ff-v
 ```
 
 - We need to tell Firefox to look for our custom CSS files. Go to `about:config`, search for 'userprof', and double click the toolkit.legacyUserProfileCustomizations.stylesheets preference to switch it to true.
-- In the Firefox preferences, disable "Show sidebar" under Browser Layout.
+- Open the sidebar preferences in Firefox (press the gear icon at the bottom of the sidebar)
+- Uncheck the "Open tools from sidebar" option
 - Restart Firefox
 
 ### Configuration
@@ -46,11 +53,15 @@ Download the files from the [latest release](https://github.com/roembol2000/ff-v
 
 ## Updating
 
-If an update broke the autohiding, I will try to fix the CSS. To update, simply replace the contents of the 'vertical-tabs.css' file with the new version in your userchrome directory (which can be found using the steps above).
+If an update broke the autohiding, I will try to fix the CSS. To update, simply replace the contents of the 'vertical-tabs.css' file with the new version in your userchrome directory (which can be found using the steps above). Check the release notes below for any additional instructions.
 
-- 2023-11-27: Initial release
-- 2024-11-29: Fix compatibility with Firefox 133
-- 2025-06-27: Fix compatibility with Firefox 140
+- 2023-11-27 (v1.0.0): Initial release
+- 2024-11-29 (v2.0.0): Fix compatibility with Firefox 133
+- 2025-06-27 (v2.1.0): Fix compatibility with Firefox 140
+- 2026-10-07 (v3.0.0): Fix compatibility with Firefox 157 ("Nova" redesign)
+  - In the sidebar settings ("Customize sidebar"), disable "Open tools from sidebar".
+    - You might need to for example open the bookmarks sidebar before can go to the settings, press <kbd>Ctrl</kbd> + <kbd>B</kbd> or <kbd>Cmd</kbd> + <kbd>B</kbd> to access the bookmarks.
+  - Update the contents of the Style Editor in Sidebery with the new contents of `sidebery.css`.
 
 ## Thank you for using!
 

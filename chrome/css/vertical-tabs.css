@@ -1,33 +1,39 @@
 /**
  * Firefox Autohide Vertical Tabs
- * Roemer Peters 2025
+ * Roemer Peters 2026
  * https://github.com/roembol2000/ff-verttabs
  *
- * v2.1.1
+ * v3.0.0
  */
 
 :root {
   /*  Set to 'none' to hide tabbar. Set to 'block' to show tabbar  */
   --vt-hide-tabbar: none;
-  
+
   /*  Set these variables to change width  */
   --vt-collapsed-width: 36px;
   --vt-expanded-width: 250px;
-  
+
   /*  Animation settings  */
   --vt-animation-time: 150ms;
   --vt-animation-delay: 0ms;
 }
 
-/* Remove tab bar (comment out if you want the tabbar) */
 #TabsToolbar {
   display: var(--vt-hide-tabbar);
 }
 
 #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] {
+  transition: all var(--vt-animation-time) ease-in-out var(--vt-animation-delay) !important;
   width: var(--vt-collapsed-width) !important;
   min-width: 0 !important;
-  z-index: 100;
+  z-index: 100 !important;
+  padding-inline-start: 0 !important;
+}
+
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:hover {
+  width: var(--vt-expanded-width) !important;
+  margin-inline-end: calc(var(--vt-collapsed-width) - var(--vt-expanded-width)) !important;
 }
 
 #sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] > .sidebar-browser-stack > #sidebar {
@@ -35,16 +41,19 @@
   width: var(--vt-collapsed-width);
 }
 
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:hover > .sidebar-browser-stack > #sidebar {
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:hover > .sidebar-browser-stack > #sidebar,
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"]:hover > .sidebar-browser-stack {
   width: var(--vt-expanded-width);
 }
 
-/* Remove sidebery header */
-#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] #sidebar-header {
-  display: none;
+/* Remove sidebar header */
+@-moz-document url("chrome://browser/content/webext-panels.xhtml") {
+  #sidebar-panel-header {
+    display: none !important;
+  }
 }
 
-/* Remove ugly sidebar splitter */
-#sidebar-splitter {
+/* Remove ugly sidebar splitter for Sidebery */
+#sidebar-box[sidebarcommand="_3c078156-979c-498b-8990-85f7987dd929_-sidebar-action"] + #sidebar-splitter {
   display: none;
 }

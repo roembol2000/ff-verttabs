@@ -6,3 +6,11 @@
 .Tab .body .fav {
   margin: 0 9px;
 }
+
+.scroll-container {
+  overflow-y: hidden !important;
+}
+
+.scroll-container:hover {
+  overflow-y: auto !important;
+}
